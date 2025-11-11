@@ -2,6 +2,10 @@ import Navbar from "@/components/Navbar";
 import ContactBar from "@/components/ContactBar";
 import Image from "next/image";
 import Hero from "@/components/Hero";
+import Featured from "@/components/Featured"
+import AboutSection from "@/components/About";
+import AdBanner from "@/components/banner";
+
 
 export default function Home() {
   return (
@@ -10,7 +14,12 @@ export default function Home() {
      <ContactBar />
       <Navbar />
       <Hero />
-     
+      <Featured />
+      <AboutSection /> 
+      <AdBanner  
+      imageUrl="/images/banner.png"   
+        altText="Exclusive Winter Sale"  
+        link="https://yourwebsite.com"/>
      </>
   );
 }

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function TopBar() {
   return (
-    <div className="w-full bg-gradient-to-r from-[#390c59] via-purple-900 to-[#390c59] text-white text-sm py-2 px-4 flex items-center justify-center gap-6 overflow-x-auto whitespace-nowrap">
+ <div className="hidden md:flex w-full bg-gradient-to-r from-[#390c59] via-purple-900 to-[#390c59] text-white text-sm py-2 px-4 items-center justify-center gap-6 overflow-x-auto whitespace-nowrap">
 
       {/* Email */}
       <div className="flex items-center gap-2">
