@@ -68,16 +68,17 @@ const Hero: React.FC = () => {
           }`}
         >
           <section
-            className="relative w-full min-h-screen flex items-center justify-center text-center text-white"
+            className="relative w-full min-h-[550px] md:min-h-screen flex items-center justify-center text-center text-white"
             style={{
               backgroundImage: "url('/images/business.jpeg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
+              backgroundAttachment: "fixed",
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-sky-400/50 via-sky-600/40 to-blue-900/50 z-0"></div>
 
-            <div className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-8 md:px-12">
+            <div className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-8 md:px-12 hero1-content">
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-2 drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)]">
                 We are everything you need
               </h1>
@@ -106,16 +107,18 @@ const Hero: React.FC = () => {
               : "opacity-0 translate-x-[50px] z-10"
           }`}
         >
-          <section className="w-full min-h-screen relative flex flex-col md:flex-row items-center justify-center bg-gradient-to-b from-[#0A0A0A] to-[#1a031a] overflow-hidden px-4 sm:px-10 md:px-20 pt-20 md:pt-[0px]">
+          <section className="w-full  md:min-h-screen relative flex flex-col md:flex-row items-center justify-center bg-gradient-to-b from-[#0A0A0A] to-[#1a031a] overflow-hidden px-4 sm:px-10 md:px-20 pt-20 md:pt-[0px] hero2-section">
             {/* Circles */}
             <div className="absolute w-64 h-64 bg-purple-700/40 rounded-full blur-3xl top-[0px] left-10 animate-pulse-slow z-0"></div>
             <div className="absolute w-48 h-48 bg-blue-500/30 rounded-full blur-3xl bottom-[200px] right-10 animate-pulse-slow z-0"></div>
 
             {/* TEXT AREA */}
-            <div className="relative z-20 flex flex-col justify-center items-center md:items-start space-y-4 text-center md:text-left w-full md:w-[550px]">
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight">
-                <span className="text-2xl sm:text-3xl md:text-5xl">Become a&nbsp;</span>
-              </h1>
+            <div className="relative z-20 flex flex-col justify-center items-center md:items-start space-y-4 text-center mt-0  md:text-left w-full md:w-[550px]">
+             <h1 className="font-bold text-white leading-tight">
+  <span className="text-[52px] sm:text-[80px] md:text-5xl">Become a&nbsp;</span>
+</h1>
+
+
               <h2 className="text-xl sm:text-2xl md:text-4xl text-blue-400 min-h-[50px]">
                 {text}
                 <span className="animate-blink">|</span>
@@ -126,7 +129,7 @@ const Hero: React.FC = () => {
                 industry.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center sm:space-x-4 mt-4 space-y-3 sm:space-y-0">
+              <div className="flex flex-row flex-wrap justify-center items-center gap-3 sm:gap-4 mt-4">
                 <button className="px-8 sm:px-10 py-2 sm:py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300 relative overflow-hidden">
                   <span className="relative z-10">Enroll Now</span>
                   <span className="absolute inset-0 bg-white/10 rounded-full blur-xl opacity-0 hover:opacity-30 transition-opacity duration-500"></span>
@@ -144,7 +147,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* IMAGE AREA */}
-            <div className="relative z-20 flex justify-center items-center w-[250px] sm:w-[300px] md:w-[450px] h-[250px] sm:h-[300px] md:h-[450px] mt-8 md:mt-0">
+            <div className="relative z-20 flex justify-center items-center w-[250px] sm:w-[300px] md:w-[450px] h-[250px] sm:h-[300px] md:h-[450px] mt-6 md:mt-0">
               <Image
                 src="/images/girl.png"
                 alt="Hero Image"
@@ -199,9 +202,34 @@ const Hero: React.FC = () => {
         .animate-pulse-slow {
           animation: pulse-slow 8s ease-in-out infinite;
         }
+
+        /* ✅ MOBILE OPTIMIZATION */
+        @media (max-width: 640px) {
+          .hero1-content {
+            max-height: 30vh;
+            justify-content: center;
+            padding-top: 0;
+          }
+          .hero1-content h1 {
+            font-size: 1.8rem;
+          }
+          .hero1-content h2 {
+            font-size: 1.1rem;
+          }
+          .hero2-section {
+            min-height: 100vh;
+            padding-top: 0;
+            justify-content: center;
+          }
+          .hero2-section img {
+            width: 180px !important;
+            height: 180px !important;
+          }
+        }
       `}</style>
     </div>
   );
 };
 
 export default Hero;
+ 

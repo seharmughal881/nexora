@@ -18,6 +18,7 @@ const Navbar = () => {
   <nav className="sticky top-0 z-50 bg-gradient-to-r from-[#000000] via-[#0b0012] to-[#2b0066] text-white shadow-xl border-b border-purple-800/30">
 
 
+
       <div className="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center cursor-pointer">
