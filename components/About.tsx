@@ -124,7 +124,7 @@ const AboutSection: React.FC = () => {
                   {item.content}
                 </p>
 
-                {/* ✅ Enroll Now button only in the last box */}
+          
                 {index === aboutData.length - 1 && (
                   <button className="px-8 sm:px-10 py-2 sm:py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300 relative overflow-hidden">
                     <span className="relative z-10">Enroll Now</span>

@@ -6,7 +6,9 @@ import Featured from "@/components/Featured"
 import AboutSection from "@/components/About";
 import AdBanner from "@/components/banner";
 import Help from "@/components/Help";
-import Testimonials from "@/components/Testimonials";
+import Testimonials from "@/components/Testimonials"; 
+import TopBlogs from "@/components/TopBlog";  
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -23,6 +25,8 @@ export default function Home() {
         link="https://yourwebsite.com"/> 
     <Testimonials />
     <Help />
+    <TopBlogs />  
+    <Footer />
      </>
   );
 }
