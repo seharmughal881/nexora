@@ -20,7 +20,7 @@ const Navbar = () => {
 
 
       <div className="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
-        {/* Logo */}
+     
         <Link href="/" className="flex items-center cursor-pointer">
           <Image
             src="/images/logo.png"
@@ -31,12 +31,12 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* Desktop Menu */}
+     
         <div className="hidden md:flex items-center space-x-8 font-medium">
           <Link href="/" className="hover:text-purple-400 transition">Home</Link>
           <Link href="/about" className="hover:text-purple-400 transition">About</Link>
 
-          {/* Services */}
+       
           <div
             className="relative"
             onMouseEnter={() => setServicesHover(true)}
@@ -56,7 +56,7 @@ const Navbar = () => {
 
           <Link href="/blogs" className="hover:text-purple-400 transition">Blogs</Link>
 
-          {/* Courses */}
+     
           <div
             className="relative"
             onMouseEnter={() => setCoursesHover(true)}
@@ -82,17 +82,15 @@ const Navbar = () => {
           <Link href="/contact" className="hover:text-purple-400 transition mr-[20px]">Contact Us</Link>
         </div>
 
-        {/* Mobile Menu Button */}
+    
         <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>☰</button>
       </div>
-
-      {/* Mobile Menu */}
+ 
       {isMenuOpen && (
         <div className="md:hidden bg-black/95 text-white px-6 pb-6 space-y-3">
           <Link href="/" className="block py-2 border-b border-purple-800/40">Home</Link>
           <Link href="/about" className="block py-2 border-b border-purple-800/40">About</Link>
-
-          {/* Services Mobile Accordion */}
+ 
           <button
             onClick={() => setServicesOpen(!servicesOpen)}
             className="w-full text-left py-2 border-b border-purple-800/40"
@@ -111,7 +109,7 @@ const Navbar = () => {
 
           <Link href="/blogs" className="block py-2 border-b border-purple-800/40">Blogs</Link>
 
-          {/* Courses Mobile Accordion */}
+          
           <button
             onClick={() => setCoursesOpen(!coursesOpen)}
             className="w-full text-left py-2 border-b border-purple-800/40 "

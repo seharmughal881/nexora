@@ -1,4 +1,4 @@
-// app/components/LostGuidance.tsx
+ // app/components/LostGuidance.tsx
 import React from "react";
 import Image from "next/image";
 
@@ -8,12 +8,13 @@ const LostGuidance: React.FC = () => {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
         {/* Left content */}
         <div className="flex-1 text-center md:text-left">
-           <h2 className="text-2xl md:text-4xl font-extrabold leading-tight text-white">
-  Feeling <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-    LOST
-  </span>{" "}
-  after learning the basics of web development?
-</h2>
+          <h2 className="text-2xl md:text-4xl font-extrabold leading-tight text-white">
+            Feeling{" "}
+            <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+              LOST
+            </span>{" "}
+            after learning the basics of web development?
+          </h2>
 
           <p className="text-gray-300 mb-8 text-lg">
             Many beginners feel overwhelmed after learning the basics. Don't worry! 
@@ -21,28 +22,52 @@ const LostGuidance: React.FC = () => {
             successful web development career.
           </p>
 
+          {/* Buttons */}
           <div className="flex flex-col md:flex-row gap-4">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition">
-              Get Free Consultation
-            </button>
-            <button className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-md transition">
-              Get a Proper Roadmap
-            </button>
-            <button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-md transition">
-              Buy an Advanced Course
-            </button>
+            {[
+              "Get Free Consultation",
+              "Get a Proper Roadmap",
+              "Buy an Advanced Course",
+            ].map((btnText, idx) => (
+              <button
+                key={idx}
+                className="
+                  relative 
+                  bg-transparent 
+                  border-1 border-[#AD46FF]
+                  text-white 
+                  font-semibold 
+                  py-3 px-6 
+                  rounded-md 
+                  flex items-center justify-center
+                  overflow-hidden 
+                  transition-all duration-500 
+                  group
+                  hover:text-white hover:border-blue-500
+                "
+              >
+                <span className="relative z-10">{btnText}</span>
+                <span className="
+                  absolute inset-0 
+                  bg-gradient-to-r from-blue-500 to-purple-600 
+                  opacity-0 
+                  group-hover:opacity-100 
+                  transition-opacity duration-500
+                "></span>
+              </button>
+            ))}
           </div>
         </div>
 
         {/* Right image */}
-         <div className="relative w-full h-80 md:h-[400px]">
-  <Image
-    src="/images/boy.jpg"
-    alt="Lost Guidance Illustration"
-    fill
-    className="object-cover rounded-lg shadow-lg"
-  />
-</div>
+        <div className="relative w-full h-80 md:h-[400px]">
+          <Image
+            src="/images/boy.jpg"
+            alt="Lost Guidance Illustration"
+            fill
+            className="object-cover rounded-lg shadow-lg"
+          />
+        </div>
       </div>
     </section>
   );
